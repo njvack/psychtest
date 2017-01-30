@@ -1,0 +1,9 @@
+Rails:
+  Enabled: True
+
+Style/StringLiterals:
+  Enabled: False
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+
