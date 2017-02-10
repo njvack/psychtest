@@ -1,0 +1,51 @@
+<style type="text/css">
+.blinker {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 32px;
+  background-color: pink;
+}
+
+.blinker.on {
+  background-color: red;
+}
+</style>
+<section>
+<h1>A little test data collection app</h1>
+<p>Welcome! In this task, you'll see a flashing dot. When it flashes, press spacebar.</p>
+<p>We don't start collecting data until you press spacebar the first time, so watch it for a little while to get the beat.</p>
+
+<div class="blinker"> </div>
+
+<div id="status">Waiting...</div>
+
+</section>
+
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  console.log("Loaded");
+  var blink_elt = document.getElementsByClassName('blinker')[0];
+  var record_blinks = 14;
+  var blinks_per_minute = 90;
+  var cycle_ms = (60 * 1000) / blinks_per_minute;
+  var blink_ms = (6/60) * 1000;
+  window.bc = blink_controller(cycle_ms, blink_ms, blink_elt, record_blinks);
+  document.addEventListener('keydown', bc.handle_press);
+  blink_elt.addEventListener('start', function(e) {
+    document.getElementById('status').innerHTML = 'Running...';
+  })
+  blink_elt.addEventListener('finish', function(e) {
+    var res = bc.match_blinks_and_presses();
+    document.getElementById('status').innerHTML = 'Finished!';
+    // var diffs = res.map(function(thing) { return thing.diff; });
+    // document.getElementById("results").innerHTML = diffs.join("\n");
+    // var m = mean(diffs);
+    // var s = stdev(diffs);
+    // document.getElementById("mean").innerHTML = "Mean: " + m;
+    // document.getElementById("std").innerHTML = "Stdev: " + s;
+  });
+  // bc.start_blinking();
+  console.log("<%= assessment_path(current_assessment) %>");
+});
+</script>

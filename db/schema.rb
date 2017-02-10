@@ -10,16 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127175516) do
+ActiveRecord::Schema.define(version: 20170206163556) do
 
-  create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "assessments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "responses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "events", force: :cascade do |t|
+    t.integer  "assessment_id"
+    t.integer  "unique_id",          null: false
+    t.integer  "relative_timestamp", null: false
+    t.jsonb    "event_json",         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["assessment_id", "unique_id"], name: "index_events_on_assessment_id_and_unique_id", unique: true, using: :btree
+    t.index ["assessment_id"], name: "index_events_on_assessment_id", using: :btree
+    t.index ["event_json"], name: "index_events_on_event_json", using: :gin
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.integer  "assessment_id"
+    t.integer  "unique_id",     null: false
+    t.string   "type",          null: false
+    t.float    "value",         null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["assessment_id", "unique_id"], name: "index_measurements_on_assessment_id_and_unique_id", unique: true, using: :btree
+    t.index ["assessment_id"], name: "index_measurements_on_assessment_id", using: :btree
   end
 
 end

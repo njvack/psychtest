@@ -1,0 +1,450 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"press",
+				"press_candidates"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 164,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/assessments_controller.rb",
+			"settings":
+			{
+				"buffer_size": 602,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class CreateAssessments < ActiveRecord::Migration[5.0]\n  def change\n    create_table :assessments do |t|\n      t.timestamps\n    end\n  end\nend\n",
+			"file": "db/migrate/20170127175504_create_assessments.rb",
+			"file_size": 143,
+			"file_write_time": 131300133040000000,
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "source 'https://rubygems.org'\n\ngit_source(:github) do |repo_name|\n  repo_name = \"#{repo_name}/#{repo_name}\" unless repo_name.include?(\"/\")\n  \"https://github.com/#{repo_name}.git\"\nend\n\n# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'\ngem 'rails', '~> 5.0.1'\n# Use Puma as the app server\ngem 'puma', '~> 3.0'\n# Use SCSS for stylesheets\ngem 'sass-rails', '~> 5.0'\n# Use Uglifier as compressor for JavaScript assets\ngem 'uglifier', '>= 1.3.0'\n# Use CoffeeScript for .coffee assets and views\ngem 'coffee-rails', '~> 4.2'\n# See https://github.com/rails/execjs#readme for more supported runtimes\n# gem 'therubyracer', platforms: :ruby\n\n# Use jquery as the JavaScript library\ngem 'jquery-rails'\n# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks\ngem 'turbolinks', '~> 5'\n# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder\ngem 'jbuilder', '~> 2.5'\n# Use Redis adapter to run Action Cable in production\n# gem 'redis', '~> 3.0'\n# Use ActiveModel has_secure_password\n# gem 'bcrypt', '~> 3.1.7'\n\n# Use postgresql as our database\ngem 'pg', '~> 0.19.0'\n\n# Use Capistrano for deployment\ngem 'capistrano-rails', :group => :development\n\ngroup :development, :test do\n  # Call 'byebug' anywhere in the code to stop execution and get a debugger console\n  gem 'byebug', :platform => :mri\nend\n\ngroup :development do\n  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.\n  gem 'web-console', '>= 3.3.0'\n  gem 'listen', '~> 3.0.5'\n  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring\n  gem 'spring'\n  gem 'spring-watcher-listen', '~> 2.0.0'\nend\n",
+			"file": "Gemfile",
+			"file_size": 1731,
+			"file_write_time": 131302646430000000,
+			"settings":
+			{
+				"buffer_size": 1736,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/assessments/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 165,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "pin",
+		"selected_items":
+		[
+			[
+				"pin",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instp",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			]
+		],
+		"width": 458.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/njvack/Rails/psychtest",
+		"/Users/njvack/Rails/psychtest/app/mailers",
+		"/Users/njvack/Rails/psychtest/app/views",
+		"/Users/njvack/Rails/psychtest/app/views/assessments",
+		"/Users/njvack/Rails/psychtest/config/initializers",
+		"/Users/njvack/Rails/psychtest/db",
+		"/Users/njvack/Rails/psychtest/db/migrate"
+	],
+	"file_history":
+	[
+		"/usr/local/var/postgres/postgresql.conf",
+		"/Users/njvack/Rails/psychtest/README.md",
+		"/Users/njvack/Rails/psychtest/config/database.yml",
+		"/Users/njvack/Rails/psychtest/Gemfile",
+		"/Users/njvack/Rails/psychtest/config/mongo.yml",
+		"/Users/njvack/Rails/psychtest/config/mongo.yml.example",
+		"/Users/njvack/Rails/psychtest/config/database.yml.example",
+		"/Users/njvack/Rails/psychtest/config/initializers/mongodb_client.rb",
+		"/Users/njvack/Rails/psychtest/app/controllers/application_controller.rb",
+		"/Users/njvack/Rails/psychtest/.gitignore",
+		"/Users/njvack/Rails/psychtest/config/initializers/session_store.rb",
+		"/Users/njvack/Rails/psychtest/config/initializers/mime_types.rb",
+		"/usr/local/etc/mongod.conf",
+		"/Users/njvack/tmp/example.submit",
+		"/Users/njvack/.bash_profile",
+		"/Users/njvack/.bashrc",
+		"/Users/njvack/.ssh/config",
+		"/Users/njvack/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/njvack/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/njvack/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/njvack/Library/Application Support/Sublime Text 3/Packages/Boxy Theme/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"data",
+			"ActiveRe",
+			"oaoo",
+			"foreach",
+			"closest_blink",
+			"blink_event"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"forEach"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/assessments_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db/migrate/20170127175504_create_assessments.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								104,
+								104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Gemfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1134,
+								1134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/assessments/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "psychtest.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"appli",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"mon",
+				"config/mongo.yml"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"datab",
+				"config/database.yml"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"data",
+				"config/database.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 273.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
