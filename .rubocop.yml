@@ -7,3 +7,5 @@ Style/StringLiterals:
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
 
+Metrics/LineLength:
+  Max: 100
