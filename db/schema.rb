@@ -16,14 +16,17 @@ ActiveRecord::Schema.define(version: 20170206163556) do
   enable_extension "plpgsql"
 
   create_table "assessments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "user_agent"
+    t.boolean  "completed",     default: false, null: false
+    t.jsonb    "configuration"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.integer  "assessment_id"
     t.integer  "unique_id",          null: false
-    t.integer  "relative_timestamp", null: false
+    t.float    "relative_timestamp", null: false
     t.jsonb    "event_json",         null: false
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170206163556) do
   create_table "measurements", force: :cascade do |t|
     t.integer  "assessment_id"
     t.integer  "unique_id",     null: false
-    t.string   "type",          null: false
+    t.string   "category",      null: false
     t.float    "value",         null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
