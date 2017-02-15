@@ -13,8 +13,10 @@
 </style>
 <section>
 <h1>A little test data collection app</h1>
-<p>Welcome! In this task, you'll see a flashing dot. When it flashes, press spacebar.</p>
+<p>Welcome! In this task, you'll see a flashing dot. <strong>When it flashes, press spacebar.</strong></p>
 <p>We don't start collecting data until you press spacebar the first time, so watch it for a little while to get the beat.</p>
+
+<button id="starter">I'm ready, start the flashing</button>
 
 <div class="blinker"> </div>
 
@@ -25,6 +27,7 @@
 <script type="text/javascript">
 window.addEventListener('load', function() {
   console.log("Loaded");
+  var csrf_token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
   var blink_elt = document.getElementsByClassName('blinker')[0];
   var record_blinks = 14;
   var blinks_per_minute = 90;
@@ -36,16 +39,13 @@ window.addEventListener('load', function() {
     document.getElementById('status').innerHTML = 'Running...';
   })
   blink_elt.addEventListener('finish', function(e) {
-    var res = bc.match_blinks_and_presses();
-    document.getElementById('status').innerHTML = 'Finished!';
-    // var diffs = res.map(function(thing) { return thing.diff; });
-    // document.getElementById("results").innerHTML = diffs.join("\n");
-    // var m = mean(diffs);
-    // var s = stdev(diffs);
-    // document.getElementById("mean").innerHTML = "Mean: " + m;
-    // document.getElementById("std").innerHTML = "Stdev: " + s;
+    document.getElementById('status').innerHTML = 'Finished! Thank you!';
+    bc.report_data('<%= assessment_path(current_assessment) %>', csrf_token)
   });
-  // bc.start_blinking();
-  console.log("<%= assessment_path(current_assessment) %>");
+  var start_button = document.getElementById('starter');
+  start_button.addEventListener('click', function() {
+    bc.start_blinking();
+    start_button.setAttribute('disabled', 'disabled');
+  })
 });
 </script>

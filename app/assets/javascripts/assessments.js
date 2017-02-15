@@ -85,6 +85,10 @@ var blink_controller = function(cycle_ms, blink_ms, blink_element, record_blinks
     if (my.blinks_recorded >= my.record_blinks) {
       my.finished = true;
       my.stop_blinking();
+      my.event_list.push({
+        'type': 'collection_finish',
+        'timestamp': window.performance.now()
+      });
       var evt = new Event('finish');
       my.blink_element.dispatchEvent(evt);
     }
@@ -191,22 +195,27 @@ var blink_controller = function(cycle_ms, blink_ms, blink_element, record_blinks
 
   function record_press(timestamp) {
     my.event_list.push({
-      "type": "keypress",
-      "timestamp": timestamp
+      'type': 'keypress',
+      'timestamp': timestamp
     });
   }
 
   my.handle_press = function(event) {
+    var ts = window.performance.now();
     console.log(event);
     if (my.finished) {
       return;
     }
     if (!my.started) {
       console.log("starting to record");
+      my.event_list.push({
+        'type': 'collection_start',
+        'timestamp': ts
+      });
       my.blink_element.dispatchEvent(new Event('start'));
       my.started = true;
     }
-    record_press(window.performance.now());
+    record_press(ts);
   }
 
   my.data_for_reporting = function() {
@@ -227,9 +236,17 @@ var blink_controller = function(cycle_ms, blink_ms, blink_element, record_blinks
     return out;
   }
 
-  my.report_data = function(url) {
-    xhr = new XMLHttpRequest();
-    data = {}
+  my.report_data = function(url, csrf_token) {
+    var xhr = new XMLHttpRequest();
+    var data = my.data_for_reporting();
+    data['authenticity_token'] = csrf_token;
+    data['completed'] = true;
+    xhr.open('PUT', url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.addEventListener('load', function(evt) {
+      console.log(evt);
+    })
+    xhr.send(JSON.stringify(data));
   }
 
   return my;
