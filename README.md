@@ -1,3 +1,7 @@
+# Unsupported Project Warning!
+
+This project is unmaintained; it was always intended as a proof-of-concept demonstration and not something for actual use.
+
 # Pssychtest!
 
 This is a little tiny demonstration app that collects some psychological data and stores it. It also does some summary aggregation. The responses will come through as a kind of heterogonous sludge of json. (Note: How true is this, actually? There's at least *some* defined structure to these responses. Can we actually just store these as structured data?)
